@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package employee;
+
+option java_multiple_files = true;
+option java_package = "com.grpc.server";
+option java_outer_classname = "EmployeeProto";
+
+
+service EmployeeService {
+  rpc CreateEmployee(CreateEmployeeRequest) returns (CreateEmployeeResponse);
+}
+
+message CreateEmployeeRequest {
+  string name = 1;
+  string department = 2;
+}
+
+message CreateEmployeeResponse {
+  int32 id = 1;
+  string name = 2;
+  string department = 3;
+}
