@@ -10,14 +10,11 @@ import java.security.SecureRandom;
 public class EmployeeServiceImpl extends EmployeeServiceGrpc.EmployeeServiceImplBase{
 
     @Override
-    public void createEmployee(CreateEmployeeRequest request,
-                               StreamObserver<CreateEmployeeResponse> responseObserver) {
-
+    public void createEmployee(CreateEmployeeRequest request, StreamObserver<CreateEmployeeResponse> responseObserver) {
 
         if (request.getName().isBlank()) {
             throw new IllegalArgumentException("Name is required");
         }
-
 
         if (request.getDepartment().isBlank()) {
             throw new IllegalArgumentException("Department is required");
